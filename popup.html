@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网页金句生成器</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="input-section">
+      <textarea id="textInput" placeholder="请输入或粘贴文本内容（建议200字以内）"></textarea>
+    </div>
+    
+    <div class="style-section">
+      <h3>选择样式</h3>
+      <div class="style-templates">
+        <div class="style-item active" data-style="style1">
+          <div class="style-preview">样式1</div>
+        </div>
+        <div class="style-item" data-style="style2">
+          <div class="style-preview">样式2</div>
+        </div>
+        <div class="style-item" data-style="style3">
+          <div class="style-preview">样式3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-section">
+      <h3>预览</h3>
+      <div id="imagePreview" class="preview-container">
+        <div class="preview-placeholder">图片预览区域</div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button id="generateBtn" class="primary-btn">生成图片</button>
+      <button id="downloadBtn" class="secondary-btn" disabled>下载</button>
+      <button id="shareBtn" class="secondary-btn" disabled>分享</button>
+    </div>
+  </div>
+  <script src="scripts/popup.js"></script>
+</body>
+</html>
