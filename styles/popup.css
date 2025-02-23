@@ -7,7 +7,7 @@
 
 body {
   width: 400px;
-  min-height: 500px;
+  min-height: 600px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   padding: 16px;
   background-color: #f5f5f5;
@@ -43,11 +43,15 @@ body {
 }
 
 /* 样式选择区域 */
-.style-section {
+.style-section,
+.size-section,
+.font-section,
+.layout-section,
+.background-section {
   margin-bottom: 20px;
 }
 
-.style-section h3 {
+h3 {
   font-size: 16px;
   margin-bottom: 12px;
   color: #333;
@@ -77,20 +81,112 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f8f8f8;
-  color: #666;
   font-size: 14px;
+  transition: all 0.2s;
+}
+
+.style-item[data-style="style1"] .style-preview {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-family: Arial;
+}
+
+.style-item[data-style="style2"] .style-preview {
+  background-color: #212529;
+  color: #f8f9fa;
+  font-family: Georgia;
+}
+
+.style-item[data-style="style3"] .style-preview {
+  background-color: #e9ecef;
+  color: #495057;
+  font-family: Verdana;
+}
+
+/* 尺寸按钮样式 */
+.size-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.size-btn {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.size-btn.active {
+  background: #4a90e2;
+  color: #fff;
+  border-color: #4a90e2;
+}
+
+/* 字体控制样式 */
+.font-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.font-select,
+.color-picker,
+.font-size-slider,
+.line-height-slider {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* 排版控制样式 */
+.layout-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.layout-btn {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.layout-btn.active {
+  background: #4a90e2;
+  color: #fff;
+  border-color: #4a90e2;
+}
+
+/* 背景控制样式 */
+.background-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.bg-upload {
+  flex: 2;
+}
+
+.reset-bg-btn {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 /* 预览区域样式 */
 .preview-section {
   margin-bottom: 20px;
-}
-
-.preview-section h3 {
-  font-size: 16px;
-  margin-bottom: 12px;
-  color: #333;
 }
 
 .preview-container {
@@ -99,38 +195,53 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #f8f8f8;
+  padding: 20px;
+  position: relative;
+}
+
+.preview-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: inherit;
 }
 
 .preview-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666;
   font-size: 14px;
+  pointer-events: none;
 }
 
-/* 按钮样式 */
+/* 操作按钮样式 */
 .action-buttons {
   display: flex;
   gap: 12px;
 }
 
-.action-buttons button {
+.primary-btn,
+.secondary-btn {
   flex: 1;
-  padding: 10px 0;
+  padding: 10px;
   border: none;
   border-radius: 4px;
-  font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  font-size: 14px;
+  transition: all 0.2s;
 }
 
 .primary-btn {
   background-color: #4a90e2;
-  color: white;
+  color: #fff;
 }
 
 .primary-btn:hover {
@@ -138,16 +249,16 @@ body {
 }
 
 .secondary-btn {
-  background-color: #f5f5f5;
-  color: #666;
+  background-color: #e9ecef;
+  color: #495057;
 }
 
 .secondary-btn:hover {
-  background-color: #e8e8e8;
+  background-color: #dee2e6;
 }
 
+.primary-btn:disabled,
 .secondary-btn:disabled {
-  background-color: #f5f5f5;
-  color: #999;
+  opacity: 0.6;
   cursor: not-allowed;
 }

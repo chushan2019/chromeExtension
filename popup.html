@@ -26,6 +26,48 @@
       </div>
     </div>
 
+    <div class="size-section">
+      <h3>图片尺寸</h3>
+      <div class="size-buttons">
+        <button class="size-btn active" data-size="1:1">1:1</button>
+        <button class="size-btn" data-size="16:9">16:9</button>
+        <button class="size-btn" data-size="9:16">9:16</button>
+        <button class="size-btn" data-size="18.5:9">18.5:9</button>
+      </div>
+    </div>
+
+    <div class="font-section">
+      <h3>字体设置</h3>
+      <div class="font-controls">
+        <select id="fontFamily" class="font-select">
+          <option value="Arial">Arial</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Verdana">Verdana</option>
+          <option value="微软雅黑">微软雅黑</option>
+        </select>
+        <input type="color" id="fontColor" value="#000000" class="color-picker">
+        <input type="range" id="fontSize" min="12" max="48" value="24" class="font-size-slider">
+        <input type="range" id="lineHeight" min="1" max="3" step="0.1" value="1.5" class="line-height-slider">
+      </div>
+    </div>
+
+    <div class="layout-section">
+      <h3>内容排版</h3>
+      <div class="layout-controls">
+        <button class="layout-btn" data-align="left">左对齐</button>
+        <button class="layout-btn active" data-align="center">居中</button>
+        <button class="layout-btn" data-align="right">右对齐</button>
+      </div>
+    </div>
+
+    <div class="background-section">
+      <h3>背景设置</h3>
+      <div class="background-controls">
+        <input type="file" id="bgUpload" accept="image/*" class="bg-upload">
+        <button id="resetBgBtn" class="reset-bg-btn">重置背景</button>
+      </div>
+    </div>
+
     <div class="preview-section">
       <h3>预览</h3>
       <div id="imagePreview" class="preview-container">
